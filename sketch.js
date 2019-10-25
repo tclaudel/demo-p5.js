@@ -3,9 +3,9 @@ var slider;
 
 // éxécutée au démarrage
 function setup() {
-  createCanvas(640, 480); 
+  createCanvas(windowWidth, windowHeight); 
   capture = createCapture(VIDEO); 
-  capture.size(width,height); 
+  capture.size(640, 480); 
   capture.hide(); 
   slider = createSlider(0, 255, 50);
   
@@ -21,9 +21,9 @@ function draw()
     var pixels = capture.pixels;
     var total = 0;
     var i = 0;
-    for(var y = 0; y < height; y++)
+    for(var y = 0; y < capture.height; y++)
     {
-      for(var x = 0; x < width; x++)
+      for(var x = 0; x < capture.width; x++)
       {
         //var i = (x + (y * width)) * 4;
         var red = pixels[i];
@@ -47,6 +47,6 @@ function draw()
     
   translate(width, 0);
   scale(-1, 1);
-  image (capture, 0, 0);
+  image (capture, 0, 0, width, height);
   }
 }
