@@ -3,7 +3,7 @@ var slider;
 
 // éxécutée au démarrage
 function setup() {
-  createCanvas(windowWidth, windowHeight); 
+  createCanvas(windowWidth / 2, windowHeight / 2); 
   capture = createCapture(VIDEO); 
   capture.size(640, 480); 
   capture.hide(); 
